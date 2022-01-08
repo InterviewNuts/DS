@@ -107,7 +107,7 @@ class Tree
         Queue q;
         Node* root = nullptr;
     public:
-    Node* getRoot(){return root;}
+        Node* getRoot() { return root; }
         Tree() :root(nullptr), q(100) {};
         void createTree();
         void preOrder(Node* r);
@@ -118,60 +118,59 @@ class Tree
 
 void Tree::createTree()
     {
+    // Queue q(100);
     Node* p = nullptr, * t = nullptr;
     int x;
-    root = new Node();
-
-    root->lChild = root->rChild = nullptr;
-    cout << " Enter the value to he tree= " << "\n";
+    cout << "Eneter root value ";
     cin >> x;
-    if (x != -1)
-        root->data = x;
+    root = new Node();
+    root->data = x;
+    root->lChild = root->rChild = nullptr;
     q.enqueue(root);
 
     while (!q.isEmpty())
         {
         p = q.dequeue();
-        cout << " Enter the value for the Left child tree= " << "\n";
+        cout << "eneter left child of "<< p->data <<" ";
         cin >> x;
         if (x != -1) {
             t = new Node();
+            t->data = x;
             t->lChild = t->rChild = nullptr;
-            q.enqueue(t);
             p->lChild = t;
+            q.enqueue(t);
             }
-        cout << " Enter the value for the Right child tree= " << "\n";
+        cout << "eneter Right child of "<< p->data <<" ";
         cin >> x;
         if (x != -1) {
             t = new Node();
+            t->data = x;
             t->lChild = t->rChild = nullptr;
-            q.enqueue(t);
             p->rChild = t;
+            q.enqueue(t);
             }
         }
     }
 
-void Tree::preOrder(struct Node* p)
+void Tree::preOrder(Node* p)
     {
     if (p)
         {
-
         cout << p->data << endl;
         preOrder(p->lChild);
         preOrder(p->rChild);
         }
     }
-void Tree::inOrder(struct Node* p)
+void Tree::inOrder(Node* p)
     {
     if (p)
         {
-
         inOrder(p->lChild);
         cout << p->data << endl;
         inOrder(p->rChild);
         }
     }
-void Tree::postOrder(struct Node* p)
+void Tree::postOrder(Node* p)
     {
     if (p)
         {
@@ -183,12 +182,16 @@ void Tree::postOrder(struct Node* p)
 
 
 
-int masin()
-{
+int main()
+    {
 
-    Tree *rootTree=new Tree();
-    rootTree->createTree();
-    rootTree->inOrder(rootTree->getRoot());
+    // Tree* rootTree = new Tree();
+    // rootTree->createTree();
+    // rootTree->inOrder(rootTree->getRoot());
+
+    Tree t;
+    t.createTree();
+    t.inOrder(t.getRoot());
 
     return 0;
-}
+    }
