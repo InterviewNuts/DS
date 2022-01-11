@@ -107,15 +107,15 @@ class Tree
         Node* root = nullptr;
     public:
         Node* getRoot() { return root; }
-        Tree() :root(nullptr){};
-        Node* createTree(Node * r,int data);
+        Tree() :root(nullptr) {};
+        Node* createTree(Node* r, int data);
         void preOrder(Node* r);
         void postOrder(Node* r);
         void inOrder(Node* r);
     };
 
 
-Node* Tree::createTree(Node * r,int data)
+Node* Tree::createTree(Node* r, int data)
     {
     Node* p = nullptr;
     if (!r) {
@@ -123,16 +123,16 @@ Node* Tree::createTree(Node * r,int data)
         r = new Node();
         r->data = data;
         r->lChild = r->rChild = nullptr;
-        if ( !root)
-        {
-            root=r;
-        }
+        if (!root)
+            {
+            root = r;
+            }
         return r;
         }
     if (data < r->data)
-        r->lChild = createTree(r->lChild,data);
+        r->lChild = createTree(r->lChild, data);
     else if (data > r->data)
-        r->rChild = createTree(r->rChild,data);
+        r->rChild = createTree(r->rChild, data);
     return r;
     }
 
@@ -170,12 +170,12 @@ int main()
     {
 
     Tree* rootTree = new Tree();
-     
-    Node *r=rootTree->createTree(rootTree->getRoot(),50);
-    r=rootTree->createTree(r,60);
-    r=rootTree->createTree(r,40);
-    r=rootTree->createTree(r,20);
-    r=rootTree->createTree(r,80);
+
+    Node* r = rootTree->createTree(rootTree->getRoot(), 50);
+    r = rootTree->createTree(r, 60);
+    r = rootTree->createTree(r, 40);
+    r = rootTree->createTree(r, 20);
+    r = rootTree->createTree(r, 80);
 
 
     rootTree->inOrder(rootTree->getRoot());
