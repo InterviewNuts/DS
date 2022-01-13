@@ -79,7 +79,18 @@ int main()
 
 
 /*
-    //! Test Program.
+//! Test Program.
+
+vec.resize(3);
+vec[0].resize(3);
+vec[1].resize(2);
+vec[2].resize(4);
+
+0. #->#,#,#
+1. #->#,#
+2. #->#,#,#,#
+
+
 
 int main()
     {
