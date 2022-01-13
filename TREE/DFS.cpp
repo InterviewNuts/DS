@@ -46,6 +46,8 @@ void initialize() {
         visited[i] = false;
     }
 
+
+
 int main()
     {
     int nodes, edges, x, y;
@@ -73,3 +75,47 @@ int main()
 // 2 3
 // 3 6
 // 4 6
+
+
+
+/*
+    //! Test Program.
+
+int main()
+    {
+
+    vector<vector<int>> vec;
+    vec.resize(3);
+    vec[0].resize(3);
+    vec[1].resize(2);
+    vec[2].resize(4);
+
+
+    vec[0][0] = 10;
+    vec[0][1] = 20;
+    vec[0][2] = 30;
+
+
+    vec[1][0] = 100;
+    vec[1][1] = 110;
+
+    vec[2][0] = 200;
+    vec[2][1] = 210;
+    vec[2][2] = 220;
+    vec[2][3] = 230;
+
+
+    for (int i = 0; i < 3; i++)
+        {
+        cout << " Size of ech 1D = " << vec[i].size() << endl;
+        cout << " Row " << i << " = ";
+        for (int j = 0; j < vec[i].size(); j++)
+            {
+            cout << ":" << vec[i][j];
+            }
+        cout << "\n";
+        }
+    return 0;
+    }
+
+    */
